@@ -1,0 +1,36 @@
+---
+title: "milestone4"
+author: "Ryan Graff"
+date: "October 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lintr)
+library(gt)
+library(readr)
+library(dplyr)
+library(glue)
+library(knitr)
+library(styler)
+library(tidyr)
+library(readxl)
+library(purrr)
+library(tibble)
+library(stringr)
+library(janitor)
+library(ggplot2)
+library(tidyverse)
+```
+
+
+```{r data import, include=FALSE, echo=FALSE}
+draft <- read_xlsx("data/draft_data.xlsx", skip = 1) %>%
+  clean_names()
+```
+
+```{r}
+
+```
+
