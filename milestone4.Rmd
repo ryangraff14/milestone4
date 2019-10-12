@@ -30,13 +30,14 @@ draft <- read_xlsx("data/draft_data.xlsx", skip = 1) %>%
   clean_names()
 ```
 
-#```{r}
+```{r plot_data, echo=FALSE}
 plot <- draft %>% 
-  group_by(year, rd)
+  filter(rd == 1 | 2, pk == 1) %>% 
+  select(year, rd, vorp)
   
 ```
 
-#```{r}
-print(plot)
+```{r graphic, echo=FALSE, warning=FALSE}
+ggplot(plot, aes(x = year, y = vorp, color = rd)) + geom_point() + labs(title = "The title of 'First overall' is not created equal", subtitle = "VORPs of the first overall pick in the first and second round NBA draft, 1987-2018") + xlab("Year") + ylab("VORP")
 ```
 
