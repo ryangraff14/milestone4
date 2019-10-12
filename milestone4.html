@@ -186,7 +186,7 @@ summary {
 
 
 <pre class="r"><code>print(draft)</code></pre>
-<pre><code>## # A tibble: 1,920 x 24
+<pre><code>## # A tibble: 1,840 x 24
 ##       rk    pk  year    rd tm    player college yrs       g mp_10 pts_11
 ##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
 ##  1     1     1  2018     1 PHO   Deand… Arizona 1        71  2183   1159
@@ -199,10 +199,17 @@ summary {
 ##  8     8     8  2018     1 CLE   Colli… Alabama 1        82  2605   1371
 ##  9     9     9  2018     1 NYK   Kevin… Kentuc… 1        75  2158    963
 ## 10    10    10  2018     1 PHI   Mikal… Villan… 1        82  2417    684
-## # … with 1,910 more rows, and 13 more variables: trb_12 &lt;dbl&gt;,
+## # … with 1,830 more rows, and 13 more variables: trb_12 &lt;dbl&gt;,
 ## #   ast_13 &lt;dbl&gt;, fg_percent &lt;dbl&gt;, x3p_percent &lt;dbl&gt;, ft_percent &lt;dbl&gt;,
 ## #   mp_17 &lt;dbl&gt;, pts_18 &lt;dbl&gt;, trb_19 &lt;dbl&gt;, ast_20 &lt;dbl&gt;, ws &lt;dbl&gt;,
 ## #   ws_48 &lt;dbl&gt;, bpm &lt;dbl&gt;, vorp &lt;dbl&gt;</code></pre>
+<div id="r" class="section level1">
+<h1>```{r}</h1>
+<p>plot &lt;- draft %&gt;% group_by(year, rd)</p>
+<pre><code>
+#```{r}
+print(plot)</code></pre>
+</div>
 
 
 

@@ -30,7 +30,13 @@ draft <- read_xlsx("data/draft_data.xlsx", skip = 1) %>%
   clean_names()
 ```
 
-```{r}
+#```{r}
+plot <- draft %>% 
+  group_by(year, rd)
+  
+```
 
+#```{r}
+print(plot)
 ```
 
