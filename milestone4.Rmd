@@ -33,12 +33,17 @@ draft <- read_xlsx("data/draft_data.xlsx", skip = 1) %>%
 ```{r plot_data, echo=FALSE}
 plot <- draft %>% 
   filter(rd == 1 | 2, pk == 1) %>% 
-  select(year, rd, vorp, ws)
+  select(year, rd, vorp, pts_18)
   
 ```
 
 ```{r graphic, echo=FALSE, warning=FALSE}
-ggplot(plot, aes(x = year, y = vorp, size = ws)) + geom_point(aes(color = factor(rd))) + labs(title = "The title of 'First overall' is not created equal", subtitle = "VORPs and Win Shares of the first overall pick in the NBA draft first and second rounds, 1987-2018") + xlab("Year") + ylab("VORP") + labs(color = "Round", size = "Win Shares")
+ggplot(plot, aes(x = year, y = vorp, size = pts_18)) + geom_point(aes(color = factor(rd), size = pts_18)) + labs(title = "The title of 'First overall' is not created equal", subtitle = "VORPs and PPG of the 1st overall pick in the NBA draft's 1st and 2nd rounds, 1987-2018") + xlab("Year") + ylab("VORP") + labs(color = "Round", size = "Points Per Game (PPG)")
 
 ```
 
+Description: 
+
+  VORP is an advanced basketball metric that shows how much better (or worse) the player in question is compared to the "league replacement", also known as the a player making minimum salary that has just been brought from the minor leagues to the pros. This graph illustrates that while the individual VORPs of the 1st round, 1st overall pick are all over the place, they are generally at or above 20, and almost always better than the first pick of the second round of their respective draft.  Meanwhile, the first picks of the second round don't have VORPs much better than that of a replacement player, which is -2.
+  
+  
