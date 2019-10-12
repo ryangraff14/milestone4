@@ -33,11 +33,12 @@ draft <- read_xlsx("data/draft_data.xlsx", skip = 1) %>%
 ```{r plot_data, echo=FALSE}
 plot <- draft %>% 
   filter(rd == 1 | 2, pk == 1) %>% 
-  select(year, rd, vorp)
+  select(year, rd, vorp, ws)
   
 ```
 
 ```{r graphic, echo=FALSE, warning=FALSE}
-ggplot(plot, aes(x = year, y = vorp, color = rd)) + geom_point() + labs(title = "The title of 'First overall' is not created equal", subtitle = "VORPs of the first overall pick in the first and second round NBA draft, 1987-2018") + xlab("Year") + ylab("VORP")
+ggplot(plot, aes(x = year, y = vorp, size = ws)) + geom_point(aes(color = factor(rd))) + labs(title = "The title of 'First overall' is not created equal", subtitle = "VORPs and Win Shares of the first overall pick in the NBA draft first and second rounds, 1987-2018") + xlab("Year") + ylab("VORP") + labs(color = "Round", size = "Win Shares")
+
 ```
 
