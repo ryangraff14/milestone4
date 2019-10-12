@@ -43,6 +43,7 @@ plot <- draft %>%
 
 # Plot
 ```{r graphic, echo=FALSE, warning=FALSE}
+# Creating the plot, I chose a scatter plot because I wanted each pick to have its own data point.  I added in ppg for size of the dot in order to convey more information about the ability of each pick.
 ggplot(plot, aes(x = year, y = vorp, size = pts_18)) + geom_point(aes(color = factor(rd), size = pts_18)) + labs(title = "The Title of 'First Pick' is Not Created Equal", subtitle = "VORPs and PPG of the 1st picks in the NBA draft's 1st and 2nd rounds, 1987-2018") + xlab("Year") + ylab("VORP") + labs(color = "Round", size = "Points Per Game (PPG)")
 
 ```
